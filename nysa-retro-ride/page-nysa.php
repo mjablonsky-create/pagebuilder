@@ -3,23 +3,83 @@
  * Template Name: Nysa
  * Template Post Type: page
  */
-$nysa = get_template_directory_uri() . '/nysa';
+$nysa = get_stylesheet_directory_uri() . '/nysa';
 ?>
 <!DOCTYPE html>
 <html lang="pl">
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Nyską.pl — Wynajem klasycznej Nyski w okolicach Tatr</title>
+  <title>Goralska-Nyska.pl — Wynajem klasycznej Nyski w okolicach Tatr</title>
   <meta name="description" content="Przejedź się klasyczną, niebieską Nyską! Wynajem zabytkowego polskiego minibusa na wesela, sesje i wycieczki po Tatrach.">
 
-  <!-- Google Fonts -->
+  <!-- Canonical -->
+  <link rel="canonical" href="https://goralska-nyska.pl/">
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/svg+xml" href="<?php echo $nysa; ?>/assets/favicon.svg">
+
+  <!-- Open Graph -->
+  <meta property="og:type"        content="website">
+  <meta property="og:locale"      content="pl_PL">
+  <meta property="og:url"         content="https://goralska-nyska.pl/">
+  <meta property="og:title"       content="Goralska-Nyska.pl — Wynajem klasycznej Nyski w okolicach Tatr">
+  <meta property="og:description" content="Przejedź się klasyczną, niebieską Nyską! Wynajem zabytkowego polskiego minibusa na wesela, sesje i wycieczki po Tatrach.">
+  <meta property="og:image"       content="https://goralska-nyska.pl/wp-content/themes/nysa-child/nysa/assets/nysa-4.jpg">
+  <meta property="og:image:width"  content="1920">
+  <meta property="og:image:height" content="1280">
+  <meta property="og:image:alt"   content="Niebieska Nyska na górskiej drodze z Tatrami w tle">
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card"        content="summary_large_image">
+  <meta name="twitter:title"       content="Goralska-Nyska.pl — Wynajem klasycznej Nyski w okolicach Tatr">
+  <meta name="twitter:description" content="Wynajem zabytkowego polskiego minibusa na wesela, sesje i wycieczki po Tatrach.">
+  <meta name="twitter:image"       content="https://goralska-nyska.pl/wp-content/themes/nysa-child/nysa/assets/nysa-4.jpg">
+
+  <!-- Google Fonts (async — non-blocking) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Archivo+Black&family=Work+Sans:wght@400;500;600&display=swap"></noscript>
 
   <link rel="stylesheet" href="<?php echo $nysa; ?>/nysa.css">
   <?php wp_head(); ?>
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "LocalBusiness",
+    "name": "Goralska-Nyska.pl",
+    "description": "Wynajem klasycznej Nyski — zabytkowego polskiego minibusa z lat 70. na wesela, sesje zdjęciowe, reklamy i przejazdy okazjonalne w okolicach Tatr.",
+    "url": "https://goralska-nyska.pl/",
+    "telephone": "+48600123456",
+
+    "image": "https://goralska-nyska.pl/wp-content/themes/nysa-child/nysa/assets/nysa-4.jpg",
+    "priceRange": "od 890 zł",
+    "address": {
+      "@type": "PostalAddress",
+      "addressLocality": "Zakopane",
+      "addressRegion": "Małopolska",
+      "addressCountry": "PL"
+    },
+    "areaServed": {
+      "@type": "GeoCircle",
+      "geoMidpoint": {
+        "@type": "GeoCoordinates",
+        "latitude": 49.2992,
+        "longitude": 19.9496
+      },
+      "geoRadius": "50000"
+    },
+    "openingHoursSpecification": {
+      "@type": "OpeningHoursSpecification",
+      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+      "opens": "09:00",
+      "closes": "20:00"
+    }
+  }
+  </script>
 </head>
 <body>
 
@@ -28,7 +88,7 @@ $nysa = get_template_directory_uri() . '/nysa';
   <div class="nav__inner">
     <a href="#hero" class="nav__logo">
       <span class="nav__logo-dot"></span>
-      NYSKĄ.PL
+      GORALSKA-NYSKA.PL
     </a>
     <div class="nav__links">
       <a href="#galeria">Galeria</a>
@@ -43,7 +103,7 @@ $nysa = get_template_directory_uri() . '/nysa';
 <!-- HERO -->
 <section id="hero" class="hero">
   <div class="hero__bg">
-    <img src="<?php echo $nysa; ?>/assets/nysa-4.jpg" alt="Niebieska Nyska na górskiej drodze z Tatrami w tle" width="1920" height="1280" style="object-position:35% center">
+    <img src="<?php echo $nysa; ?>/assets/nysa-4.jpg" alt="Niebieska Nyska na górskiej drodze z Tatrami w tle" width="1920" height="1280" fetchpriority="high" style="object-position:35% center">
   </div>
   <div class="hero__content">
     <div class="hero__badge">✦ Klasyczna polska Nyska ✦</div>
@@ -84,52 +144,52 @@ $nysa = get_template_directory_uri() . '/nysa';
 
       <div class="gallery-card left">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-2.jpg" alt="Nyska z przodu" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-2.jpg" alt="Niebieska Nyska — widok z przodu, Zakopane" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card right">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-3.jpg" alt="Nyska przy góralskim domu" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-14.jpg" alt="Nyska przy góralskim domu" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card left">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-13.jpg" alt="Nyska przy skoczni w Zakopanem" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-13.jpg" alt="Klasyczna Nyska przy skoczni narciarskiej w Zakopanem" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card right">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-5.jpg" alt="Nyska weselna" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-5.jpg" alt="Nyska jako auto na wesele — dekoracje i Tatry" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card left">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-6.jpg" alt="Wnętrze Nyski" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-6.jpg" alt="Wnętrze klasycznej Nyski — 9 miejsc siedzących" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card right">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-7.jpg" alt="Nyska nad jeziorem" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-7.jpg" alt="Nyska nad górskim jeziorem w Tatrach" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card left">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-8.jpg" alt="Nyska w Tatrach" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-8.jpg" alt="Nyska na tle Tatr — wynajem na sesję zdjęciową" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card right">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-9.jpg" alt="Nyska z bliska" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-9.jpg" alt="Detale Nyski — stylowe auto retro na wynajem" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card left">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-10.jpg" alt="Sesja ślubna" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-10.jpg" alt="Sesja zdjęciowa z Nyską — młoda para w Tatrach" loading="lazy"></div></div>
       </div>
 
       <div class="gallery-card right">
         <div class="gallery-card__thread"></div><div class="gallery-card__peg"><svg viewBox="0 0 22 58" width="22" height="58" xmlns="http://www.w3.org/2000/svg"><rect x="6" y="0" width="10" height="34" rx="3" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><circle cx="11" cy="28" r="5" fill="none" stroke="#aaa" stroke-width="2.5"/><rect x="4" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="12" y="33" width="6" height="25" rx="2" fill="#c4922a" stroke="#8a6010" stroke-width="1.5"/><rect x="10" y="33" width="2" height="25" fill="#f5f0e8"/></svg></div>
-        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-11.jpg" alt="Nyska nad wodą" loading="lazy"></div></div>
+        <div class="gallery-card__inner"><div class="gallery-card__img"><img src="<?php echo $nysa; ?>/assets/nysa-11.jpg" alt="Nyska przy rzece w okolicach Zakopanego" loading="lazy"></div></div>
       </div>
 
     </div>
@@ -205,7 +265,7 @@ $nysa = get_template_directory_uri() . '/nysa';
     <p class="contact__subtitle">Odpowiadamy w ciągu 24 godzin. Bez zobowiązań, bez ukrytych kosztów.</p>
     <div class="contact__buttons">
       <a href="tel:+48600123456" class="contact__btn-phone">📞 +48 600 123 456</a>
-      <a href="mailto:hej@nyska.pl" class="contact__btn-email">✉ hej@nyska.pl</a>
+
     </div>
     <div class="contact__badge">♡ Czekamy na Ciebie!</div>
   </div>
@@ -217,7 +277,7 @@ $nysa = get_template_directory_uri() . '/nysa';
     <div>
       <div class="footer__logo">
         <span class="footer__logo-dot"></span>
-        NYSKĄ.PL
+        GORALSKA-NYSKA.PL
       </div>
       <p class="footer__tagline">Klasyczna polska Nyska na wynajem.<br>Wesela, sesje, wycieczki po Tatrach.</p>
     </div>
@@ -225,7 +285,7 @@ $nysa = get_template_directory_uri() . '/nysa';
       <div class="footer__heading">Kontakt</div>
       <ul class="footer__list">
         <li><a href="tel:+48600123456">📞 +48 600 123 456</a></li>
-        <li><a href="mailto:hej@nyska.pl">✉ hej@nyska.pl</a></li>
+
         <li>📍 Okolice Zakopanego</li>
       </ul>
     </div>
@@ -237,9 +297,17 @@ $nysa = get_template_directory_uri() . '/nysa';
         <a href="#" class="footer__social">TikTok</a>
       </div>
     </div>
+    <div>
+      <div class="footer__heading">Dokumenty</div>
+      <ul class="footer__list">
+        <li><a href="/polityka-prywatnosci/">Polityka prywatności</a></li>
+        <li><a href="/polityka-cookies/">Polityka cookies</a></li>
+        <li><a href="/regulamin-przejazdu/">Regulamin przejazdu</a></li>
+      </ul>
+    </div>
   </div>
   <div class="footer__bottom">
-    <span>© 2026 Nyską.pl · Wszystkie prawa zastrzeżone</span>
+    <span>© 2026 Goralska-Nyska.pl · Wszystkie prawa zastrzeżone</span>
     <span class="footer__bottom-right">Made with ♡ in Tatry</span>
   </div>
 </footer>
